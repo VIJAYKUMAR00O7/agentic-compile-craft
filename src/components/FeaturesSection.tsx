@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Search, Book, ArRight } from "lucide-react";
+import { Search, Book, ArrowRight } from "lucide-react";
 
 const features = [
   {
