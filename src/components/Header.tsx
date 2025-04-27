@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
@@ -26,8 +27,12 @@ const Header = () => {
             </ul>
           </nav>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="sm">Log in</Button>
-            <Button size="sm" className="bg-primary text-primary-foreground">Get Started</Button>
+            <Link to="/auth">
+              <Button variant="ghost" size="sm">Log in</Button>
+            </Link>
+            <Link to="/auth">
+              <Button size="sm" className="bg-primary text-primary-foreground">Get Started</Button>
+            </Link>
           </div>
         </div>
 
@@ -48,8 +53,12 @@ const Header = () => {
               <li><a href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</a></li>
             </ul>
             <div className="flex flex-col gap-2 mt-4">
-              <Button variant="outline" size="sm" className="w-full">Log in</Button>
-              <Button size="sm" className="w-full bg-primary text-primary-foreground">Get Started</Button>
+              <Link to="/auth">
+                <Button variant="outline" size="sm" className="w-full">Log in</Button>
+              </Link>
+              <Link to="/auth">
+                <Button size="sm" className="w-full bg-primary text-primary-foreground">Get Started</Button>
+              </Link>
             </div>
           </nav>
         </div>
