@@ -10,12 +10,16 @@ const Header = () => {
   return (
     <header className="bg-background/95 backdrop-blur-sm sticky top-0 z-50 border-b border-border">
       <div className="container flex items-center justify-between py-4">
-        <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">AC</span>
-          </div>
-          <span className="text-xl font-bold tracking-tight">AgentCompile</span>
-        </div>
+        <Link to="/" className="flex items-center gap-4">
+          <img 
+            src="/lovable-uploads/c61550a5-d018-4dc4-a919-d6b90923cd6b.png"
+            alt="Agentic Compiler Logo"
+            className="h-12 w-auto"
+          />
+          <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-[#4CAF50] to-[#2196F3] bg-clip-text text-transparent">
+            Agentic Compiler
+          </span>
+        </Link>
         
         <div className="hidden md:flex items-center gap-8">
           <nav>
