@@ -42,37 +42,56 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="w-full max-w-md space-y-8 p-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight">Welcome back</h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Sign in to your account to continue
-          </p>
-        </div>
+    <div className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-grid opacity-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-background" />
+      
+      <div className="relative w-full max-w-md p-8">
+        <div className="backdrop-blur-xl bg-background/30 rounded-3xl border border-primary/10 shadow-2xl p-8 space-y-8">
+          <div className="text-center space-y-2">
+            <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              Welcome back
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Sign in to your account to continue
+            </p>
+          </div>
 
-        <div className="space-y-4">
-          <Button
-            variant="outline"
-            size="lg"
-            className="w-full"
-            onClick={handleGoogleLogin}
-            disabled={loading}
-          >
-            <Mail className="mr-2 h-4 w-4" />
-            Continue with Google
-          </Button>
+          <div className="space-y-4">
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full relative overflow-hidden group transition-all hover:border-primary/50"
+              onClick={handleGoogleLogin}
+              disabled={loading}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <Mail className="mr-2 h-5 w-5" />
+              <span className="text-base">Continue with Google</span>
+            </Button>
 
-          <Button
-            variant="outline"
-            size="lg"
-            className="w-full"
-            onClick={handleGithubLogin}
-            disabled={loading}
-          >
-            <Github className="mr-2 h-4 w-4" />
-            Continue with GitHub
-          </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full relative overflow-hidden group transition-all hover:border-primary/50"
+              onClick={handleGithubLogin}
+              disabled={loading}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <Github className="mr-2 h-5 w-5" />
+              <span className="text-base">Continue with GitHub</span>
+            </Button>
+          </div>
+
+          <div className="pt-4 text-center">
+            <p className="text-sm text-muted-foreground">
+              By continuing, you agree to our{' '}
+              <a href="#" className="text-primary hover:underline">Terms of Service</a>
+              {' '}and{' '}
+              <a href="#" className="text-primary hover:underline">Privacy Policy</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
