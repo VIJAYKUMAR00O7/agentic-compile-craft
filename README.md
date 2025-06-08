@@ -34,6 +34,10 @@ npm i
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
+# Step 5: Build the app for production.
+npm run build
+# (Optional) Step 6: Preview the production build.
+npm run preview
 ```
 
 **Edit a file directly in GitHub**
