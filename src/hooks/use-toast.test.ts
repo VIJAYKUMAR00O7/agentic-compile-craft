@@ -21,6 +21,17 @@ describe('toast reducer', () => {
     expect(state.toasts[0].open).toBe(false)
   })
 
+  it('dismisses all toasts when id not provided', () => {
+    const initial = {
+      toasts: [
+        { id: '1', open: true },
+        { id: '2', open: true }
+      ]
+    }
+    const state = reducer(initial, { type: 'DISMISS_TOAST' })
+    expect(state.toasts.every(t => !t.open)).toBe(true)
+  })
+
   it('removes a toast', () => {
     const initial = { toasts: [
       { id: '1', open: false },
